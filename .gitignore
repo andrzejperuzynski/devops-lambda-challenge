@@ -1,0 +1,7 @@
+/.terraform.lock.hcl
+/create_lambda_function.zip
+/delete_lambda_function.zip
+/start_lambda_function.zip
+/stop_lambda_function.zip
+/terraform.tfstate
+/terraform.tfstate.backup

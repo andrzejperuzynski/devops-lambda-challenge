@@ -12,7 +12,7 @@ def lambda_handler(event, context):
         MaxCount=1,
         KeyName='ec2-key-pair',
         SubnetId=os.environ['SUBNET_ID'],
-        SecurityGroupIds=os.environ['SECURITY_GROUP_ID']
+        SecurityGroupIds=[os.environ['SECURITY_GROUP_ID']]
     )
     instance_id = response['Instances'][0]['InstanceId']
     return {
