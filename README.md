@@ -1,5 +1,31 @@
 # devops-lambda-challenge
 
+# Challenge
+
+**Objective**: Create an API based on AWS Lambda that can create, start, stop and delete an EC2 instance. The code should be written in Python. The API should return all the information needed to connect to the EC2 instance via SSH.
+
+**Outcome**: Document the exercise (code, config files, README) in a GitHub (or similar) repository and share it with us at least one day before the demo.
+
+**Bonus**: Automate the setup as much as possible.
+
+# Prerequisites
+
+1. You need to have AWS cloud
+2. You need to have installed AWS. To do that follow this instruction: https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html
+3. You need to have configured AWS CLI with you AWS Cloud account. You need to create access key in AWS Cloud and then use it in AWS CLI. To do that follow this instruction: https://docs.aws.amazon.com/cli/v1/userguide/cli-authentication-user.html
+4. You need to install Terraform, to do that follow this instruction: https://spacelift.io/blog/how-to-install-terraform 
+
+# Install/Set up environment
+To set up environment you need do following command in terminal:
+
+```shell
+terraform init
+```
+
+```shell
+terraform apply
+```
+
 # RUN
 
 ## Create new instance of EC2
@@ -13,7 +39,8 @@ Expected Output:
 {"message": "Instance created", "instance_id": "i-0d283554f57ca8903", "ssh_key": "ec2-key-pair.pem"}
 ```
 
-## Start selected EC2 instance
+## Start selected EC2 instance and connect to it using SSH
+### 1. Run endpoint
 In terminal type:
 ```
 curl -X GET "https://<API_ID>.execute-api.us-west-2.amazonaws.com/prod/ec2/start?instance_id=<INSTANCE_ID>"
@@ -24,7 +51,7 @@ Expected Output:
 {"message": "Instance started", "instance_id": "i-0d283554f57ca8903", "publicIP": "35.89.121.36", "connect-using-ssh": "ssh -i ec2-key-pair.pem ec2-user@35.89.121.36"}
 ```
 
-### SSH Connection to EC2
+### 2. SSH Connection to EC2
 
 Like you can see to connect to `ec2` using `ssh` you can simply copy/paste to terminal content of attribute `connect-using-ssh`.
 In this case it's: `ssh -i ec2-key-pair.pem ec2-user@35.89.121.36`.
