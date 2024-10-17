@@ -4,7 +4,7 @@
 
 **Objective**: Create an API based on AWS Lambda that can create, start, stop and delete an EC2 instance. The code should be written in Python. The API should return all the information needed to connect to the EC2 instance via SSH.
 
-**Outcome**: Document the exercise (code, config files, README) in a GitHub (or similar) repository and share it with us at least one day before the demo.
+**Outcome**: Document the exercise (code, config files, README) in a GitHub (or similar) repository.
 
 **Bonus**: Automate the setup as much as possible.
 
